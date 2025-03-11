@@ -9,4 +9,6 @@ Aplikasi web untuk mengelola live streaming YouTube menggunakan Flask dan Bash.
 ## Cara Menjalankan
 1. Clone repositori ini:
    ```bash
-   git clone https://github.com/username/youtube-live-stream.git
+   git clone https://github.com/boneyanto/youtube-live-stream.git
+   cd youtube-live-stream
+   chmod +x live-ffmpeg.sh
