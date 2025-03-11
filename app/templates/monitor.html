@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1>Live Streaming Monitor</h1>
+
+{% if active_sessions %}
+<table>
+    <thead>
+        <tr>
+            <th>Session Name</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for session in active_sessions %}
+        <tr>
+            <td>{{ session }}</td>
+            <td>
+                <a href="{{ url_for('stop_stream', session_name=session) }}" class="btn btn-danger">Stop</a>
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% else %}
+<p>No active streaming sessions.</p>
+{% endif %}
+
+<a href="{{ url_for('index') }}" class="btn btn-primary">Back to Home</a>
+{% endblock %}
